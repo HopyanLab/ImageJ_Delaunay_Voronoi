@@ -257,7 +257,8 @@ public class Delaunay_Voronoi implements PlugIn {
 						double den2 = (Math.sqrt(Math.pow(ux, 2) + Math.pow(uy, 2)) * (Math.sqrt(Math.pow(wx, 2) + Math.pow(wy, 2))) );
 						double cos1 = num1/den1;
 						double cos2 = num2/den2;
-						if ((cos1>maximumCos)||(cos2>maximumCos)) {
+						if (((cos1>maximumCos)&&(cos2>0)) ||
+							((cos2>maximumCos)&&(cos1>0))) {
 							removed = true;
 							newEdges.remove(pair1);
 							newOuter.remove(pair1);
@@ -276,7 +277,8 @@ public class Delaunay_Voronoi implements PlugIn {
 						double den2 = (Math.sqrt(Math.pow(vx, 2) + Math.pow(vy, 2)) * (Math.sqrt(Math.pow(wx, 2) + Math.pow(wy, 2))) );
 						double cos1 = num1/den1;
 						double cos2 = num2/den2;
-						if ((cos1>maximumCos)||(cos2>maximumCos)) {
+						if (((cos1>maximumCos)&&(cos2>0)) ||
+							((cos2>maximumCos)&&(cos1>0))) {
 							removed = true;
 							newEdges.remove(pair2);
 							newOuter.remove(pair2);
@@ -295,7 +297,8 @@ public class Delaunay_Voronoi implements PlugIn {
 						double den2 = (Math.sqrt(Math.pow(ux, 2) + Math.pow(uy, 2)) * (Math.sqrt(Math.pow(wx, 2) + Math.pow(wy, 2))) );
 						double cos1 = num1/den1;
 						double cos2 = num2/den2;
-						if ((cos1>maximumCos)||(cos2>maximumCos)) {
+						if (((cos1>maximumCos)&&(cos2>0)) ||
+							((cos2>maximumCos)&&(cos1>0))) {
 							removed = true;
 							newEdges.remove(pair3);
 							newOuter.remove(pair3);
